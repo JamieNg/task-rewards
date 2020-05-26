@@ -6,9 +6,10 @@ const PointBoard = () => {
     <EuiFlexGroup gutterSize={"xl"} style={{ width: 900, padding: 20 }}>
       <EuiFlexItem>
         <EuiCard
-          title="Incoming"
+          title="78"
           description="Potential points from not finished items"
           icon={<EuiIcon type="logstashInput" size="xl" />}
+          betaBadgeLabel='Incoming'
           onClick={() => {
             console.log("item clicked");
           }}
@@ -16,7 +17,8 @@ const PointBoard = () => {
       </EuiFlexItem>
       <EuiFlexItem>
         <EuiCard
-          title="Available"
+          title="60"
+          betaBadgeLabel='Available'
           description="Points to exchange rewards"
           icon={<EuiIcon type="starFilledSpace" size="xl" />}
           onClick={() => {
@@ -26,7 +28,8 @@ const PointBoard = () => {
       </EuiFlexItem>
       <EuiFlexItem>
         <EuiCard
-          title="Used"
+          title="32"
+          betaBadgeLabel='Used'
           description="Exchanged points"
           icon={<EuiIcon type="check" size="xl" />}
           onClick={() => {
