@@ -1,15 +1,10 @@
 import React from 'react';
 import {EuiFacetButton, EuiIcon} from "@elastic/eui";
+import PointBoard from "../components/PointBoard";
 
 
 const Index = () => {
-  return (
-    <EuiFacetButton
-      quantity={6}
-      icon={<EuiIcon type="dot" color="secondary" />}
-      isSelected>
-    </EuiFacetButton>
-  );
+  return <PointBoard />
 };
 
 export default Index;
