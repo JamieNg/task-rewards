@@ -1,40 +1,44 @@
 import React from "react";
-import { EuiCard, EuiIcon, EuiFlexGroup, EuiFlexItem } from "@elastic/eui";
+import {
+  EuiCard,
+  EuiIcon,
+  EuiFlexGroup,
+  EuiFlexItem,
+  EuiTextColor,
+  EuiButton,
+  EuiSpacer,
+  EuiText,
+  EuiLink,
+} from "@elastic/eui";
 
 const PointBoard = () => {
   return (
     <EuiFlexGroup gutterSize={"xl"} style={{ width: 900, padding: 20 }}>
       <EuiFlexItem>
         <EuiCard
-          title="78"
-          description="Potential points from not finished items"
+          title={<EuiTextColor color="warning">78</EuiTextColor>}
+          description="Potential points from unfinished items"
           icon={<EuiIcon type="logstashInput" size="xl" />}
-          betaBadgeLabel='Incoming'
-          onClick={() => {
-            console.log("item clicked");
-          }}
+          betaBadgeLabel="Incoming"
+          footer={<EuiButton>View Logs</EuiButton>}
         />
       </EuiFlexItem>
       <EuiFlexItem>
         <EuiCard
-          title="60"
-          betaBadgeLabel='Available'
+          title={<EuiTextColor color="secondary">60</EuiTextColor>}
+          betaBadgeLabel="Available"
           description="Points to exchange rewards"
           icon={<EuiIcon type="starFilledSpace" size="xl" />}
-          onClick={() => {
-            console.log("item clicked");
-          }}
+          footer={<EuiButton>Exchange rewards</EuiButton>}
         />
       </EuiFlexItem>
       <EuiFlexItem>
         <EuiCard
-          title="32"
-          betaBadgeLabel='Used'
+          title={<EuiTextColor color="subdued">30</EuiTextColor>}
+          betaBadgeLabel="Used"
           description="Exchanged points"
           icon={<EuiIcon type="check" size="xl" />}
-          onClick={() => {
-            console.log("item clicked");
-          }}
+          footer={<EuiButton>View History</EuiButton>}
         />
       </EuiFlexItem>
     </EuiFlexGroup>

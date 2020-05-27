@@ -1,10 +1,8 @@
-import React from 'react';
-import '@elastic/eui/dist/eui_theme_amsterdam_light.css'
+import React from "react";
+import "@elastic/eui/dist/eui_theme_light.css";
 
-const _App = ({Component, pageProps}) => {
-  return (
-    <Component {...pageProps} />
-  );
+const _App = ({ Component, pageProps }) => {
+  return <Component {...pageProps} />;
 };
 
 export default _App;

@@ -1,10 +1,14 @@
-import React from 'react';
-import {EuiFacetButton, EuiIcon} from "@elastic/eui";
+import React from "react";
 import PointBoard from "../components/PointBoard";
-
+import Logs from "../components/Logs";
 
 const Index = () => {
-  return <PointBoard />
+  return (
+    <>
+      <PointBoard />
+      <Logs />
+    </>
+  );
 };
 
 export default Index;
