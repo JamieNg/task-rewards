@@ -1,14 +1,11 @@
 import React from "react";
 import {
+  EuiButton,
   EuiCard,
-  EuiIcon,
   EuiFlexGroup,
   EuiFlexItem,
+  EuiIcon,
   EuiTextColor,
-  EuiButton,
-  EuiSpacer,
-  EuiText,
-  EuiLink,
 } from "@elastic/eui";
 
 const PointBoard = () => {
