@@ -1,33 +1,62 @@
 import React from "react";
-import { EuiBasicTable } from "@elastic/eui";
+import { EuiBadge, EuiBasicTable, EuiHealth, formatDate } from "@elastic/eui";
 import { EuiBasicTableColumn } from "@elastic/eui/src/components/basic_table/basic_table";
-import { EuiTableFieldDataColumnType } from "@elastic/eui/src/components/basic_table/table_types";
-
-enum Status {
-  Added,
-  Inprogress,
-  Done,
-  Deleted,
-}
-
-const data = [
-  {
-    id: 16927,
-    name: "test story",
-    state: "update",
-    time: "2017-06-27T16:20:44Z",
-  },
-];
+import {
+  EuiTableComputedColumnType,
+  EuiTableFieldDataColumnType,
+} from "@elastic/eui/src/components/basic_table/table_types";
+import data from "../sample/logs-sample";
+const Status = {
+  added: { color: "warning", point: "+1", icon: "listAdd" },
+  update: { color: "primary", point: "" },
+  done: { color: "secondary", point: "+1", icon: "check" },
+  deleted: { color: "danger", point: "-1", icon: "trash" },
+};
 
 const Logs = () => {
-  const columns: EuiTableFieldDataColumnType<any>[] = [
+  const columns = [
     { field: "id", name: "Id" },
     { field: "name", name: "Name" },
-    { field: "state", name: "State" },
-    { field: "time", name: "Changed at" },
+    {
+      field: "status",
+      name: "Status",
+      render: (status) => (
+        <EuiHealth color={Status[status].color}>{status}</EuiHealth>
+      ),
+    },
+    {
+      field: "time",
+      name: "Changed at",
+      dataType: "date",
+      render: (date) => formatDate(date, "dobLong"),
+    },
+    {
+      render: (item) => (
+        <EuiBadge
+          color={Status[item.status].color}
+          iconType={Status[item.status].icon}
+          iconSide="left"
+        >
+          {Status[item.status].point}
+        </EuiBadge>
+      ),
+      name: "Point",
+    },
+    {
+      name: "Payload",
+      actions: [
+        {
+          name: "Payload",
+          description: "Show payload for this record",
+          type: "icon",
+          icon: "apmTrace",
+          onClick: () => "",
+        },
+      ],
+    },
   ];
 
-  return <EuiBasicTable columns={columns} items={data}></EuiBasicTable>;
+  return <EuiBasicTable columns={columns} items={data} />;
 };
 
 export default Logs;
