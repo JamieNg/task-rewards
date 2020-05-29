@@ -1,5 +1,11 @@
 import React from "react";
-import { EuiBadge, EuiBasicTable, EuiHealth, formatDate } from "@elastic/eui";
+import {
+  EuiBadge,
+  EuiBasicTable,
+  EuiHealth,
+  EuiTableActionsColumnType,
+  formatDate,
+} from "@elastic/eui";
 import { EuiBasicTableColumn } from "@elastic/eui/src/components/basic_table/basic_table";
 import {
   EuiTableComputedColumnType,
@@ -14,7 +20,7 @@ const Status = {
 };
 
 const Logs = () => {
-  const columns = [
+  const columns: EuiBasicTableColumn<any>[] = [
     { field: "id", name: "Id" },
     { field: "name", name: "Name" },
     {
@@ -53,10 +59,11 @@ const Logs = () => {
           onClick: () => "",
         },
       ],
+      width: "100px",
     },
   ];
 
-  return <EuiBasicTable columns={columns} items={data} />;
+  return <EuiBasicTable columns={columns} items={data} hasActions={true} />;
 };
 
 export default Logs;
