@@ -1,12 +1,12 @@
 import React from "react";
 import PointBoard from "../components/PointBoard";
-import Logs from "../components/Logs";
+import RewardList from "../components/RewardList";
 
 const Index = () => {
   return (
     <>
       <PointBoard />
-      <Logs />
+      <RewardList />
     </>
   );
 };
