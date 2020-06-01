@@ -1,4 +1,4 @@
-class Reward {
+class RewardCard {
   title: string;
   min: number;
   max: number;
@@ -7,28 +7,28 @@ class Reward {
   get description() {
     return `Price from ${this.min} to ${this.max}`;
   }
-  constructor(init?: Partial<Reward>) {
+  constructor(init?: Partial<RewardCard>) {
     Object.assign(this, init);
   }
 }
 
-const rewards: Reward[] = [
-  new Reward({
-    title: "A cup of drink",
+const rewards: RewardCard[] = [
+  new RewardCard({
+    title: "Drink",
     min: 10000,
     max: 20000,
     point: 1,
     icon: "drink.png",
   }),
-  new Reward({
+  new RewardCard({
     title: "Dessert",
     min: 20000,
     max: 30000,
     point: 2,
     icon: "cake.png",
   }),
-  new Reward({
-    title: "A meal",
+  new RewardCard({
+    title: "Meal",
     min: 30000,
     max: 50000,
     point: 4,
@@ -37,3 +37,4 @@ const rewards: Reward[] = [
 ];
 
 export default rewards;
+export { RewardCard };
