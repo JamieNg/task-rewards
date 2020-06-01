@@ -8,7 +8,7 @@ import {
   EuiTextColor,
 } from "@elastic/eui";
 
-const PointBoard = () => {
+const PointBoard = ({ setViewToShow }) => {
   return (
     <EuiFlexGroup gutterSize={"xl"} style={{ width: 900, padding: 20 }}>
       <EuiFlexItem>
@@ -17,7 +17,11 @@ const PointBoard = () => {
           description="Potential points from unfinished items"
           icon={<EuiIcon type="logstashInput" size="xl" />}
           betaBadgeLabel="Incoming"
-          footer={<EuiButton>View Logs</EuiButton>}
+          footer={
+            <EuiButton onClick={() => setViewToShow("logs")}>
+              View Logs
+            </EuiButton>
+          }
         />
       </EuiFlexItem>
       <EuiFlexItem>
@@ -26,7 +30,11 @@ const PointBoard = () => {
           betaBadgeLabel="Available"
           description="Points to exchange rewards"
           icon={<EuiIcon type="starFilledSpace" size="xl" />}
-          footer={<EuiButton>Exchange rewards</EuiButton>}
+          footer={
+            <EuiButton onClick={() => setViewToShow("exchange")}>
+              Exchange rewards
+            </EuiButton>
+          }
         />
       </EuiFlexItem>
       <EuiFlexItem>
@@ -35,7 +43,11 @@ const PointBoard = () => {
           betaBadgeLabel="Used"
           description="Exchanged points"
           icon={<EuiIcon type="check" size="xl" />}
-          footer={<EuiButton>View History</EuiButton>}
+          footer={
+            <EuiButton onClick={() => setViewToShow("history")}>
+              View History
+            </EuiButton>
+          }
         />
       </EuiFlexItem>
     </EuiFlexGroup>

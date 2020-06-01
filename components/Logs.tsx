@@ -1,17 +1,8 @@
 import React from "react";
-import {
-  EuiBadge,
-  EuiBasicTable,
-  EuiHealth,
-  EuiTableActionsColumnType,
-  formatDate,
-} from "@elastic/eui";
+import { EuiBadge, EuiBasicTable, EuiHealth, formatDate } from "@elastic/eui";
 import { EuiBasicTableColumn } from "@elastic/eui/src/components/basic_table/basic_table";
-import {
-  EuiTableComputedColumnType,
-  EuiTableFieldDataColumnType,
-} from "@elastic/eui/src/components/basic_table/table_types";
 import data from "../sample/logs-sample";
+
 const Status = {
   added: { color: "warning", point: "+1", icon: "listAdd" },
   update: { color: "primary", point: "" },
