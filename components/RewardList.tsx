@@ -18,7 +18,7 @@ const CheckOut = ({ selectedRewards }: { selectedRewards: RewardCard[] }) => {
   const ConfirmModal = (
     <EuiOverlayMask>
       <EuiConfirmModal
-        title="Do you want to exchange these rewards"
+        title="Do you want to exchange these rewards?"
         onCancel={() => setShowConfirm(false)}
         onConfirm={null}
         confirmButtonText="Exchange!"
